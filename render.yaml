@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: blood-type-classification
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn App:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
